@@ -11,3 +11,4 @@ opencv-python-headless==4.10.0.84
 textstat==0.7.13
 groq==0.13.1
 google-genai==0.3.0
+playwright==1.49.0
