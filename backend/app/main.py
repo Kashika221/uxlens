@@ -10,8 +10,7 @@ app = FastAPI(title="UXLens API", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
      allow_origins=[
-        "https://uxlens-1.onrender.com",
-        "http://localhost:5185",
+        "*",
     ],
     allow_credentials=False,
     allow_methods=["*"], allow_headers=["*"],
