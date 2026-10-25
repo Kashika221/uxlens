@@ -9,7 +9,12 @@ from .analyzers.llm import summarize, redesign
 app = FastAPI(title="UXLens API", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], allow_methods=["*"], allow_headers=["*"],
+     allow_origins=[
+        "https://uxlensfrontend.vercel.app/",
+        "http://localhost:5185",
+    ],
+    allow_credentials=False,
+    allow_methods=["*"], allow_headers=["*"],
 )
 
 @app.get("/health")
