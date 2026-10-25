@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5185,
     proxy: {
       '/api': {
-        target: 'https://uxlens-afnr.onrender.com',
+        target: 'https://uxlens-backend-xpqe.onrender.com',
         changeOrigin: true,
         rewrite: p => p.replace(/^\/api/, ''),
       },
