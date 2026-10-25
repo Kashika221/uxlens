@@ -10,7 +10,7 @@ app = FastAPI(title="UXLens API", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
      allow_origins=[
-        "https://uxlensfrontend.vercel.app/",
+        "https://frontend-uxlens.vercel.app",
         "http://localhost:5185",
     ],
     allow_credentials=False,
