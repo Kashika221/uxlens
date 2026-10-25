@@ -16,10 +16,9 @@ export interface AuditResponse {
   screenshots: Record<string, string>
 }
 
-const BASE = '/api'
 
 export async function auditUrl(url: string): Promise<AuditResponse> {
-  const r = await fetch(`${BASE}/audit/url`, {
+  const r = await fetch(`https://uxlens-afnr.onrender.com/audit/url`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ url }),
   })
@@ -30,13 +29,13 @@ export async function auditUrl(url: string): Promise<AuditResponse> {
 export async function auditScreenshot(file: File): Promise<AuditResponse> {
   const fd = new FormData()
   fd.append('file', file)
-  const r = await fetch(`${BASE}/audit/screenshot`, { method: 'POST', body: fd })
+  const r = await fetch(`https://uxlens-afnr.onrender.com/audit/screenshot`, { method: 'POST', body: fd })
   if (!r.ok) throw new Error(await r.text())
   return r.json()
 }
 
 export async function generateRedesign(issues: Issue[], context = ''): Promise<string> {
-  const r = await fetch(`${BASE}/redesign`, {
+  const r = await fetch(`https://uxlens-afnr.onrender.com/redesign`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ issues, context }),
   })
